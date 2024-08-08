@@ -24,7 +24,7 @@ cd /sdcard/Download
 
 ### Running Python in Termux
 
-####To run the Python script, use the following command:
+#### To run the Python script, use the following command:
 
 ```
 python btc.py
