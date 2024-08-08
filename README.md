@@ -1,4 +1,4 @@
-# Bitcoin Offline Wallet With Python
+# BITCOIN ADDRESS GENERATOR
 
 #### This Bitcoin address generator tool operates offline using the Python programming language.
 
@@ -24,7 +24,7 @@ cd /sdcard/Download
 
 ### Running Python in Termux
 
-#### To run the Python script, use the following command:
+####To run the Python script, use the following command:
 
 ```
 python btc.py
@@ -41,3 +41,45 @@ python btc.py
 ##### Do not decrypt the 'encrypted private key' unless you intend to use up all its contents. Be cautious of cyber threats.
 
 ##### For additional security, store the 'encrypted private key' in a .txt file and then encrypt it again to a .zip file with a password using the Xplore Manager app. Backup the file to any location you prefer, such as Google Drive, 4shared, Mediafire, Telegram, etc. Don't worry about leaks because your zip file is secured with two layers of protection: encryption on the private key and encryption on the zip file.
+
+# BITCOIN ADDRESS GENERATOR
+
+### Alat pembuat alamat dompet Bitcoin ini berjalan secara offline di bahasa pemprograman python.
+
+## Instalasi:
+
+### Download app termux di android. Buka terminal lalu ketik perintah berikut ini:
+
+```
+pkg upgrade
+```
+
+```
+pkg update
+```
+
+```
+pkg install python
+```
+
+```
+cd /sdcard/Download
+```
+
+## Menjalankan python di termux
+
+```
+python btc.py
+```
+
+## Catatan:
+
+##### Address dan private key yang dihasilkan dapat diimport di wallet safepal, electrum, bitget, dan juga wallet lain yang mendukung alamat legacy bitcoin. Saya memilih legacy karena paling kompatibel dengan banyak aplikasi wallet di android.
+
+##### Saat membuat wallet bitcoin ini, pastikan perangkat dalam keadaan offline, matikan semua koneksi internet, dan gunakan mode pesawat. Sampai anda selesai menyimpan hasil enkripsi dari private key.
+
+##### Simpan private key yang sudah terenkripsi, password untuk mendecryptnya, dan juga address legacy yang dihasilkan.
+
+##### Jangan mendecrypt 'encrypted private key' kecuali anda ingin menguras semua isinya untuk tidak anda gunakan lagi. Hati2 dengan banyaknya kejahatan cyber.
+
+##### Buatlah keamanan tambahan dengan menyimpan 'encrypted private key' dalam bentuk file .txt kemudian enkripsi lagi ke ekstensi .zip dengan menambahkan password di aplikasi xplore manager. Backup ke manapun yang anda mau, misalnya google drive, 4shared, mediafire, telegram, dll. Jangan khawatir akan bocor karena file zip anda sudah dilapisi keamanan 2 lapis. Yaitu encrypt di private key, dan juga encrypt di file zip.  
