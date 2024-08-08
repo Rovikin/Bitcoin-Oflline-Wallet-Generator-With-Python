@@ -75,7 +75,7 @@ def main():
 
     if choice == '1':
         while True:
-            password = getpass.getpass("create your password: ")
+            password = getpass.getpass("Create your password: ")
             confirm_password = getpass.getpass("Confirm your password: ")
             if password == confirm_password:
                 break
@@ -83,9 +83,15 @@ def main():
                 print("Passwords do not match. Please try again.")
 
         address_info = generate_bitcoin_address(password)
-        print("\nWallet created successfully!\n")
-        print(f"Encrypted key: \n{address_info['encrypted_wif']}\n")
-        print(f"Legacy Address : \n{address_info['p2pkh_address']}\n")
+        
+        # Save the encrypted WIF and legacy address to files
+        with open("encrypted_key.txt", "w") as f:
+            f.write(address_info['encrypted_wif'])
+        with open("legacy_address.txt", "w") as f:
+            f.write(address_info['p2pkh_address'])
+
+        print("\n========= Wallet created successfully! ===========")
+        print("\nKeys have been saved to : \n\n==>> encrypted_key.txt \n\nand : \n\n==>> legacy_address.txt\n\n=================================================")
 
     elif choice == '2':
         encrypted_wif_hex = input("Enter your encrypted private key: ")
