@@ -1,4 +1,4 @@
-# BITCOIN ADDRESS GENERATOR
+# Bitcoin Offline Wallet With Python
 
 #### This Bitcoin address generator tool operates offline using the Python programming language.
 
