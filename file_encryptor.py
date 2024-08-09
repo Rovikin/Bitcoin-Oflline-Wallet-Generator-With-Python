@@ -60,7 +60,13 @@ def main():
 
     if choice == '1':
         file_name = input("Enter the file name to encrypt: ")
-        password = getpass.getpass("Enter the password: ")
+        while True:
+            password = getpass.getpass("Enter the password: ")
+            confirm_password = getpass.getpass("Confirm your password: ")
+            if password == confirm_password:
+                break
+            else:
+                print("Passwords do not match. Please try again.")
         encrypt_file(file_name, password)
     
     elif choice == '2':
