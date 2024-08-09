@@ -23,14 +23,21 @@ pkg install python
 ```
 cd /sdcard
 pkg install git
-git clone
+git clone https://github.com/Rovikin/Bitcoin-Oflline-Wallet-Generator-With-Python.git
+cd /sdcard/Bitcoin-Oflline-Wallet-Generator-With-Python
 ```
 ### Running Python in Termux
 
-#### To run the Python script, use the following command:
+#### To run the Python script and private key decryptor, use the following command:
 
 ```
 python btc.py
+```
+
+#### To run the file encryptor or decryptor script, use the following command:
+
+```
+python file_encryptor.py
 ```
 
 ## Notes:
@@ -55,6 +62,7 @@ python btc.py
 
 ```
 pkg upgrade
+pkg upgrade
 ```
 
 ```
@@ -66,13 +74,21 @@ pkg install python
 ```
 
 ```
-cd /sdcard/Download
+cd /sdcard
+pkg install git
+git clone https://github.com/Rovikin/Bitcoin-Oflline-Wallet-Generator-With-Python.git
+cd /sdcard/Bitcoin-Oflline-Wallet-Generator-With-Python
 ```
 
 ## Menjalankan python di termux
 
 ```
 python btc.py
+```
+#### Menjalankan enkripsi atau dekripsi file:
+
+```
+python file_encryptor.py
 ```
 
 ## Catatan:
