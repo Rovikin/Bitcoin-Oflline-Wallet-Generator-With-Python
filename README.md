@@ -1,5 +1,7 @@
 # BITCOIN ADDRESS GENERATOR
 
+[![Video Tutorial](https://img.youtube.com/vi/a8gCo0Ajcvo/maxresdefault.jpg)](https://youtu.be/a8gCo0Ajcvo?si=q3zYEp-OkPLvXXXM)
+
 #### This Bitcoin address generator tool operates offline using the Python programming language.
 
 ## Installation:
@@ -19,9 +21,10 @@ pkg install python
 ```
 
 ```
-cd /sdcard/Download
+cd /sdcard
+pkg install git
+git clone
 ```
-
 ### Running Python in Termux
 
 #### To run the Python script, use the following command:
