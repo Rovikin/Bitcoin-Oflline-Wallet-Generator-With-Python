@@ -88,6 +88,6 @@ python file_encryptor.py
 
 Support This Project
 If you'd like to support the development of this project, you can make a donation with bitcoin. Here is the QR Code for donations:
-img.png
+[img.png](https://github.com/Rovikin/Bitcoin-Oflline-Wallet-Generator-With-Python/blob/main/img.png)
 
 Thank you for your support!
