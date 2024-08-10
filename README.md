@@ -87,7 +87,7 @@ python file_encryptor.py
 ##### Jangan mendecrypt 'encrypted private key' kecuali anda ingin menguras semua isinya untuk tidak anda gunakan lagi. Hati2 dengan banyaknya kejahatan cyber.
 
 Support This Project
-If you'd like to support the development of this project, you can make a donation with bitcoin. Here is the QR Code for donations:
-[img.png](https://github.com/Rovikin/Bitcoin-Oflline-Wallet-Generator-With-Python/blob/main/img.png)
+If you'd like to support the development of this project, you can make a donation with BITCOIN. Here is the QR Code for donations:
+![Donation QR Code](img.png)
 
 Thank you for your support!
