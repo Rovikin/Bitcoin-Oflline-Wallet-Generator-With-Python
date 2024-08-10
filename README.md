@@ -18,6 +18,7 @@ cd /sdcard
 pkg install git
 git clone https://github.com/Rovikin/Bitcoin-Oflline-Wallet-Generator-With-Python.git
 cd /sdcard/Bitcoin-Oflline-Wallet-Generator-With-Python
+python btc.py
 ```
 ### Running Python in Termux
 
@@ -31,6 +32,11 @@ python btc.py
 
 ```
 python file_encryptor.py
+```
+
+#### To run wallet addess statement and detail transaction :
+```
+python btc_check.py
 ```
 
 ## Notes:
@@ -63,6 +69,7 @@ cd /sdcard
 pkg install git
 git clone https://github.com/Rovikin/Bitcoin-Oflline-Wallet-Generator-With-Python.git
 cd /sdcard/Bitcoin-Oflline-Wallet-Generator-With-Python
+python btc.py
 ```
 
 ## Menjalankan python di termux
@@ -74,6 +81,10 @@ python btc.py
 
 ```
 python file_encryptor.py
+```
+#### Memeriksa detail transaksi dan mutasi saldo :
+```
+python btc_check.py
 ```
 
 ## Catatan:
