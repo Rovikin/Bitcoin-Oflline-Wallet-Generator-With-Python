@@ -55,17 +55,10 @@ python file_encryptor.py
 
 ```
 pkg upgrade
-```
-
-```
 pkg update
-```
-
-```
 pkg install python
-```
-
-```
+pip install ecdsa pycryptodome
+pip install base58
 cd /sdcard
 pkg install git
 git clone https://github.com/Rovikin/Bitcoin-Oflline-Wallet-Generator-With-Python.git
