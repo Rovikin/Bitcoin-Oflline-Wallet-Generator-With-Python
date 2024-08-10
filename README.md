@@ -85,9 +85,3 @@ python file_encryptor.py
 ##### Simpan private key yang sudah terenkripsi, password untuk mendecryptnya, dan juga address legacy yang dihasilkan.
 
 ##### Jangan mendecrypt 'encrypted private key' kecuali anda ingin menguras semua isinya untuk tidak anda gunakan lagi. Hati2 dengan banyaknya kejahatan cyber.
-
-Support This Project
-If you'd like to support the development of this project, you can make a donation with BITCOIN. Here is the QR Code for donations:
-![Donation QR Code](img.png)
-
-Thank you for your support!
