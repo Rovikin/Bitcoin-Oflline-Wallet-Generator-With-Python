@@ -1,24 +1,6 @@
 import requests
 from datetime import datetime, timezone, timedelta
 
-# Fungsi untuk mengonversi nama bulan ke bahasa Indonesia
-def convert_month_to_indonesian(month):
-    months = {
-        'January': 'Januari',
-        'February': 'Februari',
-        'March': 'Maret',
-        'April': 'April',
-        'May': 'Mei',
-        'June': 'Juni',
-        'July': 'Juli',
-        'August': 'Agustus',
-        'September': 'September',
-        'October': 'Oktober',
-        'November': 'November',
-        'December': 'Desember'
-    }
-    return months.get(month, month)
-
 def get_bitcoin_address_details(address):
     url = f'https://api.blockcypher.com/v1/btc/main/addrs/{address}?includeSubaccounts=true&includeUnconfirmed=true'
     response = requests.get(url)
@@ -33,18 +15,13 @@ def format_transactions(transactions):
     for i, tx in enumerate(transactions, start=1):
         # Parsing waktu konfirmasi transaksi
         date_time_utc = datetime.strptime(tx['confirmed'], '%Y-%m-%dT%H:%M:%S%z')
-        
+
         # Mengonversi ke waktu Indonesia Barat (UTC+7)
         date_time_wib = date_time_utc.astimezone(timezone(timedelta(hours=7)))
-        
-        # Ambil nama bulan dalam bahasa Inggris
-        month_english = date_time_wib.strftime('%B')
-        month_indonesian = convert_month_to_indonesian(month_english)
-        
-        # Format tanggal menjadi 'Januari 14, 2024'
-        date_str = date_time_wib.strftime(f'{month_indonesian} %d, %Y')
-        time_str = date_time_wib.strftime('%H:%M WIB')
-        
+
+        # Format tanggal dan waktu
+        date_str = date_time_wib.strftime(f'({i}) %Y,%m,%d -- %H:%M')
+
         tx_id = tx['tx_hash']
         amount_satoshi = tx['value']
 
@@ -56,25 +33,33 @@ def format_transactions(transactions):
             amount_str = f"- {formatted_amount} SAT"
         else:
             amount_str = f"+ {formatted_amount} SAT"
-        
-        formatted_transactions.append(f"{i} {date_str}\n{time_str}\n{tx_id}\n{amount_str}\n")
+
+        formatted_transactions.append(f"{date_str}\n{tx_id} ==> {amount_str}\n")
 
     return formatted_transactions
 
 def main():
     address = input('Masukkan alamat Bitcoin yang ingin Anda periksa: ')
     details = get_bitcoin_address_details(address)
-    
+
     if 'error' in details:
         print(details['error'])
         return
 
-    print(f"\nADDRESS STATEMENT")
-    print(f"GENERATED AT {datetime.utcnow().strftime('%Y-%m-%d %H:%M')} (UTC)")
+    # Mendapatkan waktu UTC saat ini
+    utc_now = datetime.utcnow()
+    # Mengonversi waktu UTC ke WIB
+    wib_now = utc_now + timedelta(hours=7)
+    # Format waktu WIB
+    generated_at_str = wib_now.strftime('%Y-%m-%d %H:%M WIB')
+
+    print(f"\n==================================================")
+    print(f"\n                ADDRESS STATEMENT\n")
+    print(f"GENERATED AT {generated_at_str}")
     print(f"BLOCKCHAIN BITCOIN")
     print(f"ADDRESS ID {address}")
-    print("\nToken Balance")
-    
+    print("\nBalance")
+
     # Format balance dengan pemisah ribuan
     formatted_balance = f"{details['final_balance']:,}".replace(",", ".")
     print(f"Bitcoin {formatted_balance} SAT")  # Display balance in SAT
@@ -82,7 +67,7 @@ def main():
 
     transactions = details.get('txrefs', [])
     formatted_transactions = format_transactions(transactions)
-    
+
     if formatted_transactions:
         for tx in formatted_transactions:
             print(tx)
